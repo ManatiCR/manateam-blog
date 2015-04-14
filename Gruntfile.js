@@ -497,7 +497,7 @@ module.exports = function (grunt) {
     sass: {
       server: {
         options: {
-          loadPath: [
+          includePaths: [
             '<%= yeoman.client %>/bower_components',
             '<%= yeoman.client %>/app',
             '<%= yeoman.client %>/components'

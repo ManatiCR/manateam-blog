@@ -6,6 +6,11 @@ angular.module('manatiBlogApp', [
   'ngSanitize',
   'ui.router'
 ])
+.constant('appConfig',{
+  api: {
+    url: 'http://manati.tk/api/'
+  }
+})
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');

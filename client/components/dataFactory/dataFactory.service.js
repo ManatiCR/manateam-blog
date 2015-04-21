@@ -10,20 +10,21 @@ angular.module('manatiBlogApp')
         isArray: true,
       },
       get: {
-        method: 'JSONP',
+        method: 'GET',
         isArray: true,
-        headers: {
-          'Accept': 'application/javascript'
-        },
         params: {
-          callback: 'JSON_CALLBACK'
+          id: 0
         }
       },
     });
     function getPosts(){
       return posts.query().$promise;
     }
+    function getPostById(id){
+      return posts.get({id: id}).$promise;
+    }
     return {
-      getPosts: getPosts
+      getPosts: getPosts,
+      getPostById: getPostById
     };
   });

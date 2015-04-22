@@ -7,9 +7,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <title>Manatí | A bunch of Drupal geeks from Costa Rica</title>
+    <meta property="og:title" content="Manatí: A bunch of Drupal geeks" />
+    <meta property="og:url" content="http://www.estudiomanati.com" />
+    <meta property="og:image" content="http://www.estudiomanati.com/images/ogim.jpg" />
+    <meta property="og:description" content="A full stack, Drupal design and development agency from Costa Rica" />
+    <link rel="canonical" href="http://www.estudiomanati.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -20,6 +24,9 @@
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
+  <![endif]-->
   </head>
   <body ng-app="manatiBlogApp">
     <!--[if lt IE 7]>
@@ -28,6 +35,16 @@
 
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
+
+    <footer class="footer-main" role="contentinfo">
+      <div class="l-content-limiter">
+        <img class="footer-logo" src="images/footer-logo.png">
+        <b class="button footer-badge">EMBRACE OPEN SOURCE</b>
+      </div>
+      <div class="closing-information">
+        <strong>made in Costa Rica</strong>
+      </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>

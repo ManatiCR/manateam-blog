@@ -1,7 +1,89 @@
-<div class="col-md-12">
-<h1>{{post.title}}</h1>
-<img ng-src="{{post.image}}"/>
-<div ng-bind-html="post.body"></div>
-<p>Categories: {{post.category}}
+<div class="page-main">
 
-</div>
+  <main class="l-content-limiter" role="main">
+    <header class="content-section-header">
+      <h2 class="title content-section-title">Blog</h2> <!-- por el momento sin breadcrumbs -->
+      <!-- insert categories in the future -->
+      <!-- insert search in the future
+        <div class="js-search-toggle">
+          Search
+          <form action="" role="search"></form>
+        </div> 
+      -->
+    </header>
+
+      <!-- blog item -->
+      <article class="entry entry-full-content">
+        <div class="entry-main-body">
+          <header class="entry-full-content-header">
+            <h1 class="title entry-full-content-title">
+              <a href="#">{{post.title}}</a>
+            </h1>
+            <!-- ANGULARIZAR ESTO -->
+            <figure class="entry-media-image">
+              <img class="entry-lead-image" src="" alt="">
+              <figcaption class="entry-media-info">
+                lorem ipsum dolor sit amet
+              </figcaption>
+            </figure>
+          </header>
+
+          <div class="entry-main-body-content" ng-bind-html="post.body"></div>
+
+          <!-- ANGULARIZAR TODO LO QUE SIGUE -->
+
+          <footer class="entry-footer">
+            <div class="social-share">
+              <h4 class="title social-share-title">Compartilo</h4>
+              <a class="social-share-link social-share-facebook" href="#">Facebook</a>
+              <a class="social-share-link social-share-twitter" href="#">Twitter</a>
+              <a class="social-share-link social-share-google" href="#">Google Plus</a>
+            </div>
+            <div class="entry-footer-comments">
+              <!-- disqus code -->
+            </div>
+            <div class="entry-footer-recommended">
+              <h2 class="title entry-footer-recommended-title"></h2>
+              <ul class="entry-recommended">
+                <li class="entry-recommended-list">
+                  <h3 class="title entry-recommended-title">
+                    Lorem ipsum dolor sit amet
+                  </h3>
+                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
+                </li>
+                <li class="entry-recommended-list">
+                  <h3 class="title entry-recommended-title">
+                    Lorem ipsum dolor sit amet
+                  </h3>
+                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
+                </li>
+                <li class="entry-recommended-list">
+                  <h3 class="title entry-recommended-title">
+                    Lorem ipsum dolor sit amet
+                  </h3>
+                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
+                </li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+        
+        <aside class="entry-details">
+          <img class="entry-details-profile-image" src="">
+          <h3 class="entry-details-author-name">
+            Victor Castro
+          </h3>
+          <time class="entry-details-date" datetime="2014-12-16">16 diciembre de 2014</time>
+          <ul class="categories-list">
+            <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
+            <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
+            <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
+            <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
+          </ul>
+        </aside>
+
+      </article> <!-- end blog item -->
+
+  </main> <!-- main -->
+
+</div> <!-- page-main -->

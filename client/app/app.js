@@ -16,5 +16,4 @@ angular.module('manatiBlogApp', [
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
   });

@@ -8,7 +8,7 @@
         <div class="js-search-toggle">
           Search
           <form action="" role="search"></form>
-        </div> 
+        </div>
       -->
     </header>
 
@@ -21,7 +21,7 @@
             </h1>
             <!-- ANGULARIZAR ESTO -->
             <figure class="entry-media-image">
-              <img class="entry-lead-image" src="" alt="">
+              <img class="entry-lead-image" ng-src="{{post.image}}" alt="">
               <figcaption class="entry-media-info">
                 lorem ipsum dolor sit amet
               </figcaption>
@@ -67,13 +67,13 @@
             </div>
           </footer>
         </div>
-        
+
         <aside class="entry-details">
-          <img class="entry-details-profile-image" src="">
+          <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
           <h3 class="entry-details-author-name">
-            Victor Castro
+            {{post.authorName}}
           </h3>
-          <time class="entry-details-date" datetime="2014-12-16">16 diciembre de 2014</time>
+          <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
           <ul class="categories-list">
             <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
             <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>

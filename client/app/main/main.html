@@ -7,20 +7,6 @@
   </div>
 </header>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Blog Posts:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
-  </div>
-  <ul>
-    <li ng-repeat="post in posts"><a href="/post/{{post.nid}}">{{post.title}}</a></li>
-  </ul>
-</div>
-
 <!-- ESTO QUE SIGUE ES EL MARKUP DEFINITIVO -->
 
 <div class="page-main">
@@ -33,26 +19,26 @@
         <div class="js-search-toggle">
           Search
           <form action="" role="search"></form>
-        </div> 
+        </div>
       -->
     </header>
     <div class="entry-list">
-      
+
       <!-- blog item -->
-      <article class="entry entry-teaser">
+      <article class="entry entry-teaser" ng-repeat="post in posts" >
         <div class="entry-container  entry-teaser-container">
           <h2 class="title entry-title-teaser">
-            <a href="#">Agregar la función MAX de SQL programáticamente a un campo de una vista</a>
+            <a href="/post/{{post.nid}}">{{post.title}}</a>
           </h2>
-          <p class="entry-content entry-teaser-content">Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
-          <a href="" class="button button-with-arrow read-more">Leer más</a>
+          <p class="entry-content entry-teaser-content" ng-bind-html="post.body"></p>
+          <a href="/post/{{post.nid}}" class="button button-with-arrow read-more">Leer más</a>
         </div>
         <aside class="entry-details">
-          <img class="entry-details-profile-image" src="">
+          <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
           <h3 class="entry-details-author-name">
-            Victor Castro
+            {{post.authorName}}
           </h3>
-          <time class="entry-details-date" datetime="2014-12-16">16 diciembre de 2014</time>
+          <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
           <ul class="categories-list">
             <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
             <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>

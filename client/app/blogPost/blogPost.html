@@ -39,31 +39,10 @@
               <a class="social-share-link social-share-twitter" href="#">Twitter</a>
               <a class="social-share-link social-share-google" href="#">Google Plus</a>
             </div>
-            <div class="entry-footer-comments">
-              <!-- disqus code -->
+            <div class="entry-footer-comments" ng-include="'components/postComments/postComments.html'">
+
             </div>
-            <div class="entry-footer-recommended">
-              <h2 class="title entry-footer-recommended-title"></h2>
-              <ul class="entry-recommended">
-                <li class="entry-recommended-list">
-                  <h3 class="title entry-recommended-title">
-                    Lorem ipsum dolor sit amet
-                  </h3>
-                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
-                </li>
-                <li class="entry-recommended-list">
-                  <h3 class="title entry-recommended-title">
-                    Lorem ipsum dolor sit amet
-                  </h3>
-                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
-                </li>
-                <li class="entry-recommended-list">
-                  <h3 class="title entry-recommended-title">
-                    Lorem ipsum dolor sit amet
-                  </h3>
-                  <time class="entry-recommended-date" datetime="2014-12-16">16 diciembre de 2014</time>
-                </li>
-              </ul>
+            <div class="entry-footer-recommended" ng-include="'components/postRelatedContent/postRelatedContent.html'">
             </div>
           </footer>
         </div>

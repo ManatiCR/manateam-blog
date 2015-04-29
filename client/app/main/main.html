@@ -28,10 +28,10 @@
       <article class="entry entry-teaser" ng-repeat="post in posts" >
         <div class="entry-container  entry-teaser-container">
           <h2 class="title entry-title-teaser">
-            <a href="#/post/{{post.nid}}">{{post.title}}</a>
+            <a ui-sref="blogPost({id: post.nid})">{{post.title}}</a>
           </h2>
           <p class="entry-content entry-teaser-content" ng-bind-html="post.body"></p>
-          <a href="#/post/{{post.nid}}" class="button button-with-arrow read-more">Leer más</a>
+          <a ui-sref="blogPost({id: post.nid})" class="button button-with-arrow read-more">Leer más</a>
         </div>
         <aside class="entry-details">
           <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
@@ -55,7 +55,7 @@
         <li class="pager-item"><a href="#" class="pager-link"></a>3</li>
         <li class="pager-item"><a href="#" class="pager-link"></a>4</li>
         <li class="pager-item"><a href="#" class="pager-link"></a>5</li>
-        <li class="pager-item"><a href="#" class="pager-link pager-next">Next</a></li>
+        <li class="pager-item"><a ui-sref="main({page: 1})" class="pager-link pager-next">Next</a></li>
       </ul>
     </div> <!-- entry-list -->
   </main> <!-- main -->

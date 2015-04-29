@@ -3,11 +3,15 @@
 angular.module('manatiBlogApp')
   .factory('dataFactory', function ($resource, appConfig) {
     var posts = $resource(appConfig.api.url+'blog/:id',{
-      id: '@id'
+      id: '@id',
+      page: '@page',
     }, {
       query: {
         method: 'GET',
         isArray: true,
+        params: {
+          page: 0
+        },
       },
       get: {
         method: 'GET',
@@ -17,8 +21,8 @@ angular.module('manatiBlogApp')
         }
       },
     });
-    function getPosts(){
-      return posts.query().$promise;
+    function getPosts(pageNumber){
+      return posts.query({page: pageNumber}).$promise;
     }
     function getPostById(id){
       return posts.get({id: id}).$promise;

@@ -4,7 +4,7 @@ angular.module('manatiBlogApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
-        url: '/',
+        url: '/:page',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });

@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-  .controller('MainCtrl', function ($scope,dataFactory) {
+  .controller('MainCtrl', function ($scope,$stateParams,dataFactory) {
       $scope.posts = [];
-      dataFactory.getPosts().then(function(data){
+      console.log($stateParams.page);
+      dataFactory.getPosts($stateParams.page).then(function(data){
         $scope.posts = data;
       });
   });

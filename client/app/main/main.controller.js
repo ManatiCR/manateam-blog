@@ -1,17 +1,29 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-  .controller('MainCtrl', function ($scope,$stateParams,dataFactory,$translate) {
-      $scope.posts = [];
-      $translate.use();
-      $scope.setLanguage = function(lang){
-        console.log(lang);
-        $translate.use(lang);
-      };
+.controller('MainCtrl', function ($scope,$stateParams,dataFactory,$translate) {
+  $scope.posts = [];
+  $scope.language = 'en';
+  function getData(langCode, pageNumber){
+    dataFactory.getPosts(langCode, pageNumber).then(function(data){
+      $scope.posts = data;
+    });
+  }
 
+  if ($translate.use() === 'es') {
+    $scope.language = 'es';
+  }
+  else if($translate.use() === 'en'){
+    $scope.language = 'en';
+  }
 
-      console.log($stateParams.page);
-      dataFactory.getPosts($stateParams.page).then(function(data){
-        $scope.posts = data;
-      });
-  });
+  $scope.setLanguage = function(lang){
+    console.log(lang);
+    $translate.use(lang);
+    $scope.language = lang;
+    getData(lang,$stateParams.page);
+  };
+
+  getData($scope.language,$stateParams.page);
+
+});

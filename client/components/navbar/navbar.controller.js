@@ -1,15 +1,14 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-  .controller('NavbarCtrl', function ($scope, $location) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+.controller('NavbarCtrl', function ($scope, $translate) {
+  $scope.setLanguage = function(){
+    if ($translate.use() === 'en'){
+      $translate.use('es');
+    }
+    else if($translate.use() === 'es'){
+      $translate.use('en');
+    }
+  };
 
-    $scope.isCollapsed = true;
-
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    };
-  });
+});

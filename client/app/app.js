@@ -18,11 +18,15 @@ angular.module('manatiBlogApp', [
   $locationProvider.html5Mode(false);
   $translateProvider.translations('en',{
     'MANATI-SLOGAN': 'We’re a bunch of Drupal geeks',
-    'READ-MORE-LINK': 'Read More'
+    'READ-MORE-LINK': 'Read More',
+    'LANGUAGE': 'Español',
+    'SHARE': 'Share',
   });
   $translateProvider.translations('es',{
     'MANATI-SLOGAN': 'Somos un montón de Drupal geeks',
-    'READ-MORE-LINK': 'Leer más'
+    'READ-MORE-LINK': 'Leer más',
+    'LANGUAGE':  'English',
+    'SHARE': 'Comparte en',
   });
   $translateProvider.registerAvailableLanguageKeys(['en', 'es'], {
   'en_US': 'en',

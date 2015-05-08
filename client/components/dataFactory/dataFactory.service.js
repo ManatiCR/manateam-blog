@@ -5,13 +5,13 @@ angular.module('manatiBlogApp')
     var posts = $resource(appConfig.api.url+'blog/:id',{
       id: '@id',
       lang: '@lang',
-      page: '@page',
+      //page: '@page',
     }, {
       query: {
         method: 'GET',
         isArray: true,
         params: {
-          page: 0,
+          //page: 0,
           lang: 'en',
         },
       },
@@ -24,14 +24,16 @@ angular.module('manatiBlogApp')
         }
       },
     });
+
     function getPosts(language,pageNumber){
       return posts.query({page: pageNumber, lang:language}).$promise;
     }
     function getPostById(id, language){
       return posts.get({id: id, lang: language}).$promise;
     }
+
     return {
       getPosts: getPosts,
-      getPostById: getPostById
+      getPostById: getPostById,
     };
   });

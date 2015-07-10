@@ -8,8 +8,7 @@
 </header>
 
 <!-- ESTO QUE SIGUE ES EL MARKUP DEFINITIVO -->
-<button ng-click ="setLanguage('es')"> Español </button>
-<button ng-click ="setLanguage('en')"> English </button>
+
 <div class="page-main">
 
   <main class="l-content-limiter" role="main">
@@ -40,12 +39,13 @@
             {{post.authorName}}
           </h3>
           <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
-          <ul class="categories-list">
+          <div class="categories-list">{{post.tags}}</div>
+        <!--  <ul class="categories-list">
             <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
             <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
             <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
             <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
-          </ul>
+          </ul> -->
         </aside>
       </article> <!-- end blog item -->
 

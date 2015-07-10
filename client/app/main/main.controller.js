@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-.controller('MainCtrl', function ($scope,$stateParams,dataFactory,$translate) {
+.controller('MainCtrl', function ($scope, $stateParams, dataFactory,$translate, $rootScope) {
   $scope.posts = [];
   $scope.language = 'en';
   function getData(langCode, pageNumber){
@@ -9,7 +9,6 @@ angular.module('manatiBlogApp')
       $scope.posts = data;
     });
   }
-
   if ($translate.use() === 'es') {
     $scope.language = 'es';
   }
@@ -17,13 +16,8 @@ angular.module('manatiBlogApp')
     $scope.language = 'en';
   }
 
-  $scope.setLanguage = function(lang){
-    console.log(lang);
-    $translate.use(lang);
-    $scope.language = lang;
-    getData(lang,$stateParams.page);
-  };
-
+  $rootScope.$on('$translateChangeSuccess', function(){
+    getData($translate.use(),$stateParams.page);
+  });
   getData($scope.language,$stateParams.page);
-
 });

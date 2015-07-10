@@ -1,9 +1,16 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-  .controller('BlogPostCtrl', function ($scope,$stateParams,dataFactory) {
+  .controller('BlogPostCtrl', function ($scope,$rootScope,$stateParams,dataFactory, $translate) {
     $scope.post = [];
-    dataFactory.getPostById($stateParams.id, $stateParams.lang).then(function(data){
-      $scope.post = data[0];
+    function getPostByid(id, lang){
+      dataFactory.getPostById(id,lang).then(function(data){
+        $scope.post = data[0];
+     });
+    }
+    $rootScope.$on('$translateChangeSuccess', function(){
+      getPostByid($stateParams.id,$translate.use());
     });
+    getPostByid($stateParams.id, $stateParams.lang);
+
   });

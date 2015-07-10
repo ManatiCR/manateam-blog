@@ -39,17 +39,12 @@
           </ul> -->
         </aside>
       </article> <!-- end blog item -->
-
-      <!--ul class="pager">
-        <li class="pager-item"><a href="#" class="pager-link pager-previous">Previous</a></li>
-        <li class="pager-item"><a ui-sref="main({page: 1})" class="pager-link">1</a></li>
-        <li class="pager-item"><a ui-sref="main({page: 2})" class="pager-link pager-active">2</a></li>
-        <li class="pager-item"><a href="#" class="pager-link">3</a></li>
-        <li class="pager-item"><a href="#" class="pager-link">4</a></li>
-        <li class="pager-item"><a href="#" class="pager-link">5</a></li>
-        <li class="pager-item"><a ui-sref="main({page: 1})" class="pager-link pager-next">Next</a></li>
-      </ul-->
     </div> <!-- entry-list -->
+    <ul class="pager">
+        <li class="pager-item"><a ui-sref="{{getPrev()}}" class="pager-link pager-previous">Previous</a></li>
+        <li class="pager-item" ng-repeat="i in pages"><a ui-sref="main({page: {{ i }}})" class="pager-link">{{ i }}</a></li>
+        <li class="pager-item"><a ui-sref="{{getNext()}}" class="pager-link pager-next">Next</a></li>
+    </ul>
   </main> <!-- main -->
 
 </div>

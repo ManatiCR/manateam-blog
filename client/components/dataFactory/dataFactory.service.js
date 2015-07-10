@@ -31,9 +31,13 @@ angular.module('manatiBlogApp')
     function getPostById(id, language){
       return posts.get({id: id, lang: language}).$promise;
     }
+    function getPostCount(language){
+      return posts.get({id: 'count', lang: language}).$promise;
+    }
 
     return {
       getPosts: getPosts,
       getPostById: getPostById,
+      getPostCount: getPostCount,
     };
   });

@@ -2,13 +2,61 @@
 
 angular.module('manatiBlogApp')
 .controller('MainCtrl', function ($scope, $stateParams, dataFactory,$translate, $rootScope) {
+  // Set initial variables.
   $scope.posts = [];
   $scope.language = 'en';
+  $scope.pageLength = 3;
+  $scope.pages = [];
+  $scope.page = $stateParams.page ? $stateParams.page : 1;
+
+  /**
+   * Get required data from factory.
+   */
   function getData(langCode, pageNumber){
     dataFactory.getPosts(langCode, pageNumber).then(function(data){
       $scope.posts = data;
     });
   }
+
+  /**
+   * Get pages count and populate pages array..
+   */
+  function getCount(langCode){
+    $scope.pages = [];
+    dataFactory.getPostCount(langCode).then(function(data){
+      $scope.pageCount = Math.floor(data.length / $scope.pageLength);
+      for (var i=1; i<=$scope.pageCount; i++) {
+        $scope.pages.push(i);
+      }
+    });
+  }
+
+  /**
+   * Get previous state.
+   */
+  $scope.getPrev = function() {
+    var state = '-';
+    if ($scope.page > 1) {
+      state =  'main({page: ' + ($scope.page - 1) + '})';
+    }
+    return state;
+  }
+
+  /**
+   * Get next state.
+   */
+  $scope.getNext = function() {
+    var state = '-';
+    if ($scope.page <= $scope.pageCount - 1) {
+      state =  'main({page: ' + (parseInt($scope.page) + 1) + '})';
+    }
+    console.log(state, 'state');
+    return state;
+  }
+
+  /**
+   * Set language according to translate.
+   */
   if ($translate.use() === 'es') {
     $scope.language = 'es';
   }
@@ -16,8 +64,17 @@ angular.module('manatiBlogApp')
     $scope.language = 'en';
   }
 
+  /**
+   * On translate change, pull data and count.
+   */
   $rootScope.$on('$translateChangeSuccess', function(){
     getData($translate.use(),$stateParams.page);
+    getCount($translate.use());
   });
-  getData($scope.language,$stateParams.page);
+
+  /**
+   * Pull initial data and count.
+   */
+  getData($scope.language, $stateParams.page);
+  getCount($scope.language);
 });

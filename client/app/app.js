@@ -6,6 +6,7 @@ angular.module('manatiBlogApp', [
   'ngSanitize',
   'ui.router',
   'pascalprecht.translate',
+  'ngDisqus',
 ])
 .constant('appConfig',{
   api: {
@@ -16,6 +17,7 @@ angular.module('manatiBlogApp', [
   $urlRouterProvider
   .otherwise('/');
   $locationProvider.html5Mode(false);
+  $locationProvider.hashPrefix('!');
   $translateProvider.translations('en',{
     'MANATI-SLOGAN': 'We’re a bunch of Drupal geeks',
     'READ-MORE-LINK': 'Read More',

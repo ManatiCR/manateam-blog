@@ -1,6 +1,5 @@
 <div class="page-main">
   <div ng-include="'components/navbar/navbar.html'"></div>
-
   <main class="l-content-limiter" role="main">
     <header class="content-section-header">
       <h2 class="title content-section-title">Blog</h2> <!-- por el momento sin breadcrumbs -->
@@ -60,7 +59,9 @@
         </aside>
 
       </article> <!-- end blog item -->
+      <div disqus="post.nid"></div>
 
   </main> <!-- main -->
 
 </div> <!-- page-main -->
+<script>window.disqus_shortname = 'manatiblog';</script>

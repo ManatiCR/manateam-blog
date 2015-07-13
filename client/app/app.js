@@ -40,6 +40,6 @@ angular.module('manatiBlogApp', [
   $translateProvider.fallbackLanguage('en');
   $translateProvider.determinePreferredLanguage();
   $translateProvider.useCookieStorage();
-  $translateProvider.useSanitizeValueStrategy('sanitize');
+  $translateProvider.useSanitizeValueStrategy('escape');
 
 });

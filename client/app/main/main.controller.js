@@ -7,13 +7,13 @@ angular.module('manatiBlogApp')
   $scope.language = 'en';
   $scope.pageLength = 3;
   $scope.pages = [];
-  $scope.page = $stateParams.page ? $stateParams.page : 1;
+  $scope.page = $stateParams.page ? parseInt($stateParams.page) : 1;
 
   /**
    * Get required data from factory.
    */
   function getData(langCode, pageNumber){
-    dataFactory.getPosts(langCode, pageNumber).then(function(data){
+    dataFactory.getPosts(langCode, pageNumber - 1).then(function(data){
       $scope.posts = data;
     });
   }
@@ -24,34 +24,11 @@ angular.module('manatiBlogApp')
   function getCount(langCode){
     $scope.pages = [];
     dataFactory.getPostCount(langCode).then(function(data){
-      $scope.pageCount = Math.floor(data.length / $scope.pageLength);
+      $scope.pageCount = Math.ceil(data.length / $scope.pageLength);
       for (var i=1; i<=$scope.pageCount; i++) {
         $scope.pages.push(i);
       }
     });
-  }
-
-  /**
-   * Get previous state.
-   */
-  $scope.getPrev = function() {
-    var state = '-';
-    if ($scope.page > 1) {
-      state =  'main({page: ' + ($scope.page - 1) + '})';
-    }
-    return state;
-  }
-
-  /**
-   * Get next state.
-   */
-  $scope.getNext = function() {
-    var state = '-';
-    if ($scope.page <= $scope.pageCount - 1) {
-      state =  'main({page: ' + (parseInt($scope.page) + 1) + '})';
-    }
-    console.log(state, 'state');
-    return state;
   }
 
   /**

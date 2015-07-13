@@ -40,10 +40,10 @@
         </aside>
       </article> <!-- end blog item -->
     </div> <!-- entry-list -->
-    <ul class="pager">
-        <li class="pager-item"><a ui-sref="{{getPrev()}}" class="pager-link pager-previous">Previous</a></li>
+    <ul class="pager" ng-if="pageCount > 1">
+        <li class="pager-item" ng-if="page > 1"><a ui-sref=".({page: page - 1})" class="pager-link pager-previous">Previous</a></li>
         <li class="pager-item" ng-repeat="i in pages"><a ui-sref="main({page: {{ i }}})" class="pager-link">{{ i }}</a></li>
-        <li class="pager-item"><a ui-sref="{{getNext()}}" class="pager-link pager-next">Next</a></li>
+        <li class="pager-item" ng-if="page + 1 <= pageCount"><a ui-sref=".({page: page + 1})" class="pager-link pager-next">Next</a></li>
     </ul>
   </main> <!-- main -->
 

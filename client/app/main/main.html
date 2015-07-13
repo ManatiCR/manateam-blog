@@ -14,7 +14,7 @@
       -->
     </header>
 
-    <div class="spinner" ng-if="!posts.length">LOADING</div>
+    <div class="spinner" ng-if="!posts.length && !loadingFinished">LOADING</div>
     <div class="entry-list" ng-if="posts.length">
 
       <!-- blog item -->

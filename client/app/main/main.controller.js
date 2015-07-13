@@ -5,6 +5,7 @@ angular.module('manatiBlogApp')
   // Set initial variables.
   $scope.posts = [];
   $scope.language = 'en';
+  $scope.loadingFinished = false;
   $scope.pageLength = 3;
   $scope.pages = [];
   $scope.page = $stateParams.page ? parseInt($stateParams.page) : 1;
@@ -15,6 +16,7 @@ angular.module('manatiBlogApp')
   function getData(langCode, pageNumber){
     dataFactory.getPosts(langCode, pageNumber - 1).then(function(data){
       $scope.posts = data;
+      $scope.loadingFinished = true;
     });
   }
 

@@ -15,7 +15,7 @@ angular.module('manatiBlogApp', [
 })
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider,$translateProvider) {
   $urlRouterProvider
-  .otherwise('/');
+  .otherwise('/not-found');
   $locationProvider.html5Mode(true);
   $translateProvider.translations('en',{
     'MANATI-SLOGAN': 'We’re a bunch of Drupal geeks',

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-.controller('MainCtrl', function ($scope, $stateParams, dataFactory,$translate, $rootScope) {
+.controller('MainCtrl', function ($scope, $stateParams, dataFactory, $translate, $rootScope, $state) {
   // Set initial variables.
   $scope.posts = [];
   $scope.language = 'en';
@@ -14,9 +14,15 @@ angular.module('manatiBlogApp')
    * Get required data from factory.
    */
   function getData(langCode, pageNumber){
-    dataFactory.getPosts(langCode, pageNumber - 1).then(function(data){
+    if (pageNumber > 0) {
+      pageNumber -= 1;
+    }
+    dataFactory.getPosts(langCode, pageNumber).then(function(data){
       $scope.posts = data;
       $scope.loadingFinished = true;
+      if (!$scope.posts.length) {
+        $state.go('not-found');
+      }
     });
   }
 

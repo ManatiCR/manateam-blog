@@ -42,7 +42,10 @@
     </div> <!-- entry-list -->
     <ul class="pager" ng-if="pageCount > 1">
         <li class="pager-item" ng-if="page > 1"><a ui-sref=".({page: page - 1})" class="pager-link pager-previous">Previous</a></li>
-        <li class="pager-item" ng-repeat="i in pages"><a ui-sref="main({page: {{ i }}})" class="pager-link">{{ i }}</a></li>
+        <li class="pager-item" ng-repeat="actual in pages">
+          <a ng-if="actual != page" ui-sref=".({page: {{ actual }}})" class="pager-link">{{ actual }}</a>
+          <span ng-if="actual == page" class="pager-link actual">{{ actual }}</span>
+        </li>
         <li class="pager-item" ng-if="page + 1 <= pageCount"><a ui-sref=".({page: page + 1})" class="pager-link pager-next">Next</a></li>
     </ul>
   </main> <!-- main -->

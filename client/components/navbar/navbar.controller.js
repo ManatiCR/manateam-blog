@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-.controller('NavbarCtrl', function ($scope, $translate) {
+.controller('NavbarCtrl', function ($scope, $translate, $rootScope) {
   $scope.language = $translate.use();
+  $scope.newLang = function() {
+    return $scope.language == 'en' ? 'es' : 'en';
+  }
+  $rootScope.destLang = $scope.newLang();
   $scope.setLanguage = function(){
     if ($translate.use() === 'en'){
       $translate.use('es');

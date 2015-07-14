@@ -5,9 +5,9 @@ angular.module('manatiBlogApp')
   // Set initial variables.
   $scope.posts = [];
   $scope.loadingFinished = false;
-  $scope.language = '';
   $scope.pageLength = 3;
   $scope.pages = [];
+  $scope.language = $stateParams.lang ? $stateParams.lang : 'en';
   $scope.page = $stateParams.page ? parseInt($stateParams.page) : 1;
 
   /**
@@ -40,21 +40,8 @@ angular.module('manatiBlogApp')
   }
 
   /**
-   * On translate change, pull data and count.
-   */
-  $rootScope.$on('$translateChangeSuccess', function(){
-    $scope.language = $translate.use();
-    getData($translate.use(),$stateParams.page);
-    getCount($translate.use());
-  });
-
-  /**
    * Pull initial data and count.
    */
-  if ($stateParams.lang) {
-    $translate.use($stateParams.lang);
-  }
-  else {
-    $translate.use('en');
-  }
+  getData($translate.use(), $stateParams.page);
+  getCount($translate.use());
 });

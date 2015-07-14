@@ -11,6 +11,7 @@ angular.module('manatiBlogApp')
         else {
           var newLang = lang == 'es' ? 'en' : 'es';
           $scope.flashMessage = "The requested post doesn't exist in requested language. Falling back to actual language.";
+          $rootScope.destLang = newLang;
           $translate.use(newLang);
         }
      }).catch (function(e) {
@@ -22,9 +23,6 @@ angular.module('manatiBlogApp')
     $scope.clearFlashMessage = function() {
       $scope.flashMessage = "";
     };
-    $rootScope.$on('$translateChangeSuccess', function(){
-      getPostByid($stateParams.id,$translate.use());
-    });
     getPostByid($stateParams.id, $stateParams.lang);
 
   });

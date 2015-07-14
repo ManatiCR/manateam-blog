@@ -17,7 +17,7 @@
             <a ng-href="{{item.link}}">{{item.title}}</a>
         </li>
         <li class="lang-switcher">
-            <a href="#" ng-click ="setLanguage()"> {{'LANGUAGE' | translate}} </a>
+          <a ng-click="setLanguage()" ui-sref=".({lang: destLang})"> {{'LANGUAGE' | translate}} </a>
         </li>
       </ul>
     </div>

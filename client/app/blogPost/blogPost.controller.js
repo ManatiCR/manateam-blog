@@ -13,6 +13,7 @@ angular.module('manatiBlogApp')
           $scope.flashMessage = "The requested post doesn't exist in requested language. Falling back to actual language.";
           $rootScope.destLang = newLang;
           $translate.use(newLang);
+          getPostByid(id, newLang);
         }
      }).catch (function(e) {
          if (e.status == 404) {

@@ -7,10 +7,5 @@ angular.module('manatiBlogApp')
         url: '/:lang?page',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
-      })
-      .state('main-slash', {
-        url: '/:lang/?page',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
       });
   });

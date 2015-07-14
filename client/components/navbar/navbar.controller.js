@@ -18,19 +18,23 @@ angular.module('manatiBlogApp')
   $scope.menu = [
     {
       'title': 'About us',
-      'link': '/'
+      'link': '/#about'
     },
     {
       'title': 'Our Work',
-      'link': '/'
+      'link': '/#work'
     },
     {
       'title': 'Community',
-      'link': '/'
+      'link': '/#community'
     },
     {
       'title': 'Blog',
-      'link': '/'
+      'link': '/blog'
+    },
+    {
+      'title': 'Contact us',
+      'link': '/#contact'
     },
   ];
 

@@ -13,11 +13,11 @@ angular.module('manatiBlogApp')
   /**
    * Get required data from factory.
    */
-  function getData(langCode, pageNumber){
+  var getData = function(langCode, pageNumber) {
     if (pageNumber > 0) {
       pageNumber -= 1;
     }
-    dataFactory.getPosts(langCode, pageNumber).then(function(data){
+    dataFactory.getPosts(langCode, pageNumber).then(function(data) {
       $scope.posts = data;
       $scope.loadingFinished = true;
       if (!$scope.posts.length) {
@@ -29,8 +29,8 @@ angular.module('manatiBlogApp')
   /**
    * Get pages count and populate pages array..
    */
-  function getCount(langCode){
-    dataFactory.getPostCount(langCode).then(function(data){
+  var getCount = function(langCode){
+    dataFactory.getPostCount(langCode).then(function(data) {
       $scope.pageCount = Math.ceil(data.length / $scope.pageLength);
       $scope.pages = [];
       for (var i=1; i<=$scope.pageCount; i++) {
@@ -42,6 +42,8 @@ angular.module('manatiBlogApp')
   /**
    * Pull initial data and count.
    */
+  $translate.use($scope.language);
   getData($translate.use(), $stateParams.page);
   getCount($translate.use());
+
 });

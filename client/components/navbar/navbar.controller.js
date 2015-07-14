@@ -2,6 +2,7 @@
 
 angular.module('manatiBlogApp')
 .controller('NavbarCtrl', function ($scope, $translate) {
+  $scope.language = $translate.use();
   $scope.setLanguage = function(){
     if ($translate.use() === 'en'){
       $translate.use('es');

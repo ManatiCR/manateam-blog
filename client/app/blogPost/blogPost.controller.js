@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-  .controller('BlogPostCtrl', function ($scope, $rootScope, $stateParams, $translate, $state, dataFactory) {
+  .controller('BlogPostCtrl', function ($scope, $rootScope, $stateParams, $translate, $state, $location, dataFactory) {
 
     $scope.post = [];
+    $scope.absoluteUrl = $location.absUrl();
 
     var getPostById = function (id, lang) {
       dataFactory.getPostById(id, lang).then(function(data) {

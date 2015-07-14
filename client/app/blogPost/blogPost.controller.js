@@ -14,7 +14,7 @@ angular.module('manatiBlogApp')
         }
         else {
           var newLang = lang == 'es' ? 'en' : 'es';
-          $scope.flashMessage = "The requested post doesn't exist in requested language. Falling back to actual language.";
+          $scope.flashMessage = $translate.instant('POST-NOT-FOUND-LANG');
           $rootScope.destLang = newLang;
           $translate.use(newLang);
           getPostById(id, newLang);

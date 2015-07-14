@@ -2,16 +2,16 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="manatiBlogApp"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/blog/" target="_blank"/>
-    <title>Manatí | A bunch of Drupal geeks from Costa Rica</title>
-    <meta property="og:title" content="Manatí: A bunch of Drupal geeks" />
+    <title>Manatí | {{ 'MANATI-SLOGAN' | translate }}</title>
+    <meta property="og:title" content="Manatí: {{ 'MANATI-SLOGAN-SHORT' | translate }}" />
     <meta property="og:url" content="http://www.estudiomanati.com" />
     <meta property="og:image" content="http://www.estudiomanati.com/images/ogim.jpg" />
-    <meta property="og:description" content="A full stack, Drupal design and development agency from Costa Rica" />
+    <meta property="og:description" content="{{ 'MANATI-DESCRIPTION' | translate }}" />
     <link rel="canonical" href="http://www.estudiomanati.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
   <![endif]-->
   </head>
-  <body ng-app="manatiBlogApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -39,10 +39,10 @@
     <footer class="footer-main" role="contentinfo">
       <div class="l-content-limiter">
         <img class="footer-logo" src="images/footer-logo.png">
-        <b class="button footer-badge">EMBRACE OPEN SOURCE</b>
+        <b class="button footer-badge">{{ 'FOOTER-BADGE' | translate }}</b>
       </div>
       <div class="closing-information">
-        <strong>made in Costa Rica</strong>
+          <strong>{{ 'CLOSING-INFORMATION' | translate }}</strong>
       </div>
     </footer>
 

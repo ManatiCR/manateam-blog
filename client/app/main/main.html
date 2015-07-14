@@ -4,7 +4,7 @@
 
   <main class="l-content-limiter" role="main">
     <header class="content-section-header">
-      <h1 class="title section-title">Blog</h1>
+        <h1 class="title section-title">{{ 'BLOG' | translate }}</h1>
       <!-- insert categories in the future -->
       <!-- insert search in the future
         <div class="js-search-toggle">
@@ -14,6 +14,7 @@
       -->
     </header>
 
+    <!-- @TODO: LOADING text should be changed -->
     <div class="spinner" ng-if="!posts.length && !loadingFinished">LOADING</div>
     <div class="entry-list" ng-if="posts.length">
 

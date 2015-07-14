@@ -2,7 +2,7 @@
   <div ng-include="'components/navbar/navbar.html'"></div>
   <main class="l-content-limiter" role="main">
     <header class="content-section-header">
-      <h2 class="title content-section-title">Blog</h2> <!-- por el momento sin breadcrumbs -->
+        <h2 class="title content-section-title">{{ 'BLOG' | translate }}</h2> <!-- por el momento sin breadcrumbs -->
       <!-- insert categories in the future -->
       <!-- insert search in the future
         <div class="js-search-toggle">
@@ -26,9 +26,6 @@
             <!-- ANGULARIZAR ESTO -->
             <figure class="entry-media-image">
               <img class="entry-lead-image" ng-src="{{post.image}}" alt="">
-              <figcaption class="entry-media-info">
-                lorem ipsum dolor sit amet
-              </figcaption>
             </figure>
           </header>
 

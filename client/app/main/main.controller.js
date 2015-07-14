@@ -40,19 +40,10 @@ angular.module('manatiBlogApp')
   }
 
   /**
-   * Set language according to translate.
-   */
-  if ($translate.use() === 'es') {
-    $scope.language = 'es';
-  }
-  else if($translate.use() === 'en'){
-    $scope.language = 'en';
-  }
-
-  /**
    * On translate change, pull data and count.
    */
   $rootScope.$on('$translateChangeSuccess', function(){
+    $scope.language = $translate.use();
     getData($translate.use(),$stateParams.page);
     getCount($translate.use());
   });

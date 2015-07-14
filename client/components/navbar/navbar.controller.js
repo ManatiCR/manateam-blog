@@ -10,7 +10,7 @@ angular.module('manatiBlogApp')
   $scope.language = $translate.use();
   $rootScope.destLang = $scope.newLang();
 
-  $scope.setLanguage = function(){
+  $scope.switchLanguage = function(){
     var lang = $translate.use() == 'en' ? 'es' : 'en';
     $translate.use(lang);
   };

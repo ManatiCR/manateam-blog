@@ -4,8 +4,8 @@ angular.module('manatiBlogApp')
 .controller('MainCtrl', function ($scope, $stateParams, dataFactory, $translate, $rootScope, $state) {
   // Set initial variables.
   $scope.posts = [];
-  $scope.language = 'en';
   $scope.loadingFinished = false;
+  $scope.language = '';
   $scope.pageLength = 3;
   $scope.pages = [];
   $scope.page = $stateParams.page ? parseInt($stateParams.page) : 1;
@@ -30,9 +30,9 @@ angular.module('manatiBlogApp')
    * Get pages count and populate pages array..
    */
   function getCount(langCode){
-    $scope.pages = [];
     dataFactory.getPostCount(langCode).then(function(data){
       $scope.pageCount = Math.ceil(data.length / $scope.pageLength);
+      $scope.pages = [];
       for (var i=1; i<=$scope.pageCount; i++) {
         $scope.pages.push(i);
       }
@@ -60,6 +60,10 @@ angular.module('manatiBlogApp')
   /**
    * Pull initial data and count.
    */
-  getData($scope.language, $stateParams.page);
-  getCount($scope.language);
+  if ($stateParams.lang) {
+    $translate.use($stateParams.lang);
+  }
+  else {
+    $translate.use('en');
+  }
 });

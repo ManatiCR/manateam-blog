@@ -217,6 +217,11 @@ AddDefaultCharset utf-8
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
+    # Remove trailing /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
     # Rewrite everything else to index.html to allow html5 state links
     RewriteRule ^ index.php [L]
   # RewriteBase /

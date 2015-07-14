@@ -10,6 +10,10 @@
           <form action="" role="search"></form>
         </div>
       -->
+      <div class="alert" ng-show="flashMessage">
+          <p>{{flashMessage}}</p>
+          <a href="#" class="close-message" ng-click="clearFlashMessage()">X</a>
+      </div>
     </header>
 
       <!-- blog item -->

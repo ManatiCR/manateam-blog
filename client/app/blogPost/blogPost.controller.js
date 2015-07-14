@@ -13,6 +13,7 @@ angular.module('manatiBlogApp')
         else if (!$scope.langReverted) {
           $scope.langReverted = true;
           var newLang = lang == 'es' ? 'en' : 'es';
+          $scope.flashMessage = "The requested post doesn't exist in requested language. Falling back to actual language.";
           $translate.use(newLang);
         }
         else {
@@ -24,6 +25,9 @@ angular.module('manatiBlogApp')
          }
      });
     }
+    $scope.clearFlashMessage = function() {
+      $scope.flashMessage = "";
+    };
     $rootScope.$on('$translateChangeSuccess', function(){
       getPostByid($stateParams.id,$translate.use());
     });

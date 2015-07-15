@@ -7,6 +7,7 @@ angular.module('manatiBlogApp', [
   'ui.router',
   'pascalprecht.translate',
   'ngDisqus',
+  'ngAnimate',
 ])
 .constant('appConfig',{
   api: {

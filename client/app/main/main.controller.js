@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('manatiBlogApp')
-.controller('MainCtrl', function ($scope, $stateParams, dataFactory, $translate, $rootScope, $state) {
+.controller('MainCtrl', function ($scope, $stateParams, dataFactory, $translate, $state) {
   // Set initial variables.
   $scope.posts = [];
   $scope.loadingFinished = false;
@@ -19,10 +19,12 @@ angular.module('manatiBlogApp')
     }
     dataFactory.getPosts(langCode, pageNumber).then(function(data) {
       $scope.posts = data;
-      $scope.loadingFinished = true;
       if (!$scope.posts.length) {
         $state.go('not-found');
       }
+    })
+    .finally(function() {
+       $scope.loadingFinished = true;
     });
   }
 

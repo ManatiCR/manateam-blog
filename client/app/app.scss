@@ -21,6 +21,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     }
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'blogPost/blogPost.scss';

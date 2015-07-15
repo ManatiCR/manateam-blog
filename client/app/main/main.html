@@ -16,7 +16,7 @@
 
     <!-- @TODO: LOADING text should be changed -->
     <div class="spinner animate-hide" ng-hide="loadingFinished">LOADING</div>
-    <div class="entry-list animate-show" ng-show="posts.length && loadingFinished">
+    <div class="entry-list animate-show" ng-cloak ng-show="posts.length && loadingFinished">
 
       <!-- blog item -->
       <article class="entry entry-teaser" ng-repeat="post in posts" >
@@ -43,7 +43,7 @@
         </aside>
       </article> <!-- end blog item -->
     </div> <!-- entry-list -->
-    <ul class="pager" ng-if="pageCount > 1" ng-show="loadingFinished">
+    <ul class="pager" ng-cloak ng-if="pageCount > 1" ng-show="loadingFinished">
         <li class="pager-item" ng-if="page > 1"><a ui-sref=".({page: page - 1})" class="pager-link pager-previous">Previous</a></li>
         <li class="pager-item" ng-repeat="actual in pages">
           <a ng-if="actual != page" ui-sref=".({page: {{ actual }}})" class="pager-link">{{ actual }}</a>

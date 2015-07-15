@@ -26,7 +26,7 @@ angular.module('manatiBlogApp')
     .finally(function() {
        $scope.loadingFinished = true;
     });
-  }
+  };
 
   /**
    * Get pages count and populate pages array..
@@ -39,7 +39,7 @@ angular.module('manatiBlogApp')
         $scope.pages.push(i);
       }
     });
-  }
+  };
 
   /**
    * Pull initial data and count.

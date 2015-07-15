@@ -26,7 +26,7 @@ angular.module('manatiBlogApp', [
     'CLOSING-INFORMATION': 'made in Costa Rica',
     'BLOG': 'Blog',
     'READ-MORE-LINK': 'Read More',
-    'POST-NOT-FOUND-LANG': "The requested post doesn't exist in requested language. Falling back to actual language.",
+    'POST-NOT-FOUND-LANG': 'The requested post doesn\'t exist in requested language. Falling back to actual language.',
     'LANGUAGE': 'Español',
     'SHARE': 'Share',
   });
@@ -38,7 +38,7 @@ angular.module('manatiBlogApp', [
     'CLOSING-INFORMATION': 'hecho en Costa Rica',
     'BLOG': 'Blog',
     'READ-MORE-LINK': 'Leer más',
-    'POST-NOT-FOUND-LANG': "El post solicitado no existe en el idioma solicitado. Mostrando el post en el lenguage actual.",
+    'POST-NOT-FOUND-LANG': 'El post solicitado no existe en el idioma solicitado. Mostrando el post en el lenguage actual.',
     'LANGUAGE':  'English',
     'SHARE': 'Comparte en',
   });

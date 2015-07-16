@@ -19,7 +19,7 @@ angular.module('manatiBlogApp', [
   .otherwise('/not-found');
   $locationProvider.html5Mode(true);
   $translateProvider.translations('en',{
-    'MANATI-SLOGAN': 'We’re a bunch of Drupal geeks from Costa Rica',
+    'MANATI-SLOGAN': 'A bunch of Drupal geeks from Costa Rica',
     'MANATI-SLOGAN-SHORT': 'A bunch of Drupal geeks',
     'MANATI-DESCRIPTION': 'A full stack, Drupal design and development agency from Costa Rica',
     'FOOTER-BADGE': 'EMBRACE OPEN SOURCE',

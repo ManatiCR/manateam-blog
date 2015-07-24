@@ -9,11 +9,11 @@ module.exports = function (grunt) {
     localConfig = {};
   }
 
-  // var modRewrite = require('connect-modrewrite');
+  var modRewrite = require('connect-modrewrite');
 
-  // var mountFolder = function (connect, dir) {
-  //   return connect.static(require('path').resolve(dir));
-  // };
+  var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+  };
 
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
@@ -66,13 +66,13 @@ module.exports = function (grunt) {
           livereload: true,
           base: ['<%= yeoman.client %>', '.tmp/'],
           port: 9000,
-          // middleware: function (connect) {
-          //   return [
-          //     modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']),
-          //     mountFolder(connect, 'client'),
-          //     mountFolder(connect, '.tmp')
-          //   ];
-          // }
+          middleware: function (connect) {
+            return [
+              modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']),
+              mountFolder(connect, 'client'),
+              mountFolder(connect, '.tmp')
+            ];
+          }
         }
       }
     },

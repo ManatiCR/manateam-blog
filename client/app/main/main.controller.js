@@ -7,7 +7,10 @@ angular.module('manatiBlogApp')
   $scope.loadingFinished = false;
   $scope.pageLength = 3;
   $scope.pages = [];
-  $scope.language = $stateParams.lang ? $stateParams.lang : 'en';
+  if (!$stateParams.lang) {
+    $state.go('main', {lang: 'en'});
+  }
+  $scope.language = $stateParams.lang;
   $scope.page = $stateParams.page ? parseInt($stateParams.page) : 1;
 
   /**

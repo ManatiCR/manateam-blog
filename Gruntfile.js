@@ -263,7 +263,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/public/{,*/}*.css',
             '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '!<%= yeoman.dist %>/public/assets/images/favicons/*',
-            '<%= yeoman.dist %>/public/assets/fonts/*'
+            '<%= yeoman.dist %>/public/assets/fonts/bariol/*'
           ]
         }
       }
@@ -498,6 +498,8 @@ module.exports = function (grunt) {
       server: {
         options: {
           includePaths: [
+            'node_modules/node-neat/node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets',
+            'node_modules/node-neat/node_modules/bourbon-neat/app/assets/stylesheets',
             '<%= yeoman.client %>/bower_components',
             '<%= yeoman.client %>/app',
             '<%= yeoman.client %>/components'
@@ -549,7 +551,8 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.client %>/app/app.scss': [
             '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}',
-            '!<%= yeoman.client %>/app/app.{scss,sass}'
+            '!<%= yeoman.client %>/app/app.{scss,sass}',
+            '!<%= yeoman.client %>/app/sass/**/*.{scss,sass}'
           ]
         }
       },

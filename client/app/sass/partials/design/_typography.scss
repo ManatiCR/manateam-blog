@@ -1,0 +1,46 @@
+//
+// Typography
+//
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $fira-sans;
+  @include font-size(1.4);
+}
+
+li {
+  @include font-size(1.6);
+}
+
+p {
+  @include font-size(1.4);
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: $secondary-dark;
+}
+
+h1 {
+  @include font-size(3.0);
+}
+
+h2 {
+  @include font-size(2.2);
+}
+h3 {
+  @include font-size(1.8);
+  font-weight: normal;
+}
+
+h4 {
+  @include font-size(1.4);
+}
+
+strong {
+  color: $secondary-dark;
+}

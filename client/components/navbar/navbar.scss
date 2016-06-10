@@ -1,20 +1,2 @@
-#navbar-main {
-  width: 100%;
-}
-.navbar {
-  background: #BBEFE0;
-  min-height: 4rem;
-}
-.navbar-right {
-  float: right;
-}
-ul.navbar-nav {
-  list-style: none;
-  li {
-    float: left;
-    margin-left: .5rem;
-    a {
-      text-decoration: none;
-    }
-  }
-}
+@import 'navbar-layout';
+@import 'navbar-design';

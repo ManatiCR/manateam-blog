@@ -2,6 +2,9 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'font-awesome/scss/font-awesome';
+@import 'sass/partials/global/base';
+@import 'sass/partials/design/design';
+@import 'sass/partials/layout/layout';
 
 /**
  * App-wide Styles
@@ -30,5 +33,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'blogPost/blogPost.scss';
 @import 'main/main.scss';
 @import 'not-found/not-found.scss';
+@import 'navbar/_navbar-design.scss';
+@import 'navbar/_navbar-layout.scss';
 @import 'navbar/navbar.scss';
 // endinjector

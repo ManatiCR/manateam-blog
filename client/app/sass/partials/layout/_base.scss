@@ -1,0 +1,28 @@
+///////////////////////////////
+// Base Layout rules.
+// @_base.scss
+///////////////////////////////
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-main {
+  display: block;
+  overflow: hidden;
+  @include breakpoint(1240px) {
+    max-width: $full-width;
+    margin: 0 auto;
+  }
+  padding: 40px 20px;
+}

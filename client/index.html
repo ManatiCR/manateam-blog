@@ -36,13 +36,38 @@
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
 
-    <footer class="footer-main" ng-cloak role="contentinfo">
-      <div class="l-content-limiter">
-        <img class="footer-logo" src="images/footer-logo.png">
-        <b class="button footer-badge">{{ 'FOOTER-BADGE' | translate }}</b>
-      </div>
-      <div class="closing-information">
-          <strong>{{ 'CLOSING-INFORMATION' | translate }}</strong>
+    <footer class="footer">
+      <div class="footer--wrapper limiter">
+        <section class="footer--section footer--section__left">
+          <h3 class="footer--section-title">Sold? Let's talk</h3>
+          <p>Manatí is a company based in San José, Costa Rica.</p>
+          <p>Give us a call at +506 2234-6622</p>
+          <p>Our usual project budget starts at $20.000*</p>
+          <ul class="social-network--list social-network--list__footer">
+            <li class="social-network--list-title">Follow Us</li>
+            <li class="social-network--list-item social-network--list-item__twitter">
+              <a href="https://twitter.com/estudiomanati" target="_blank" class="social-network--link">Twiter</a>
+            </li>
+            <li class="social-network--list-item social-network--list-item__github">
+              <a href="https://github.com/ManatiCR" target="_blank" class="social-network--link">Github</a>
+            </li>
+            <li class="social-network--list-item social-network--list-item__drupal">
+              <a href="https://www.drupal.org/manat%C3%AD" target="_blank" class="social-network--link">Drupal</a>
+            </li>
+            <li class="social-network--list-item social-network--list-item__facebook">
+              <a href="https://www.facebook.com/estudiomanati/" target="_blank" class="social-network--link">Facebook</a>
+            </li>
+            <li class="social-network--list-item social-network--list-item__linkedin">
+              <a href="https://www.linkedin.com/company/manat%C3%AD" target="_blank" class="social-network--link">LinkedIn</a>
+            </li>
+          </ul>
+        </section>
+        <section class="footer--section footer--section__right">
+          <div class="footer--section-title-wrapper">
+            <h3 class="footer--section-title">Send us a message</h3><span class="footer--ornament"></span>
+          </div>
+          <p>If you want to request a quote or if you have an RFP ready for us to analyze, please email us at: info@estudiomanati.com</p>
+        </section>
       </div>
     </footer>
 

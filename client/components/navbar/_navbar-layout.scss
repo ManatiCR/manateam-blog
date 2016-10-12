@@ -1,0 +1,50 @@
+.nav {
+  padding-top: 15px;
+
+  @include media($medium) {
+    padding-top: 0;
+  }
+}
+
+.nav--wrapper {
+  .logo--wrapper {
+    order: 1;
+  }
+  .logo--image {
+    margin: 15px 0;
+
+    @include media($medium) {
+      margin: 35px 0;
+    }
+  }
+  .nav--menu-list {
+    order: 3;
+    flex: 100% 0 0;
+    justify-content: center;
+    margin: 10px 0 0;
+    padding: 15px 0 20px;
+    position: relative;
+    flex-wrap: wrap;
+
+    @include media(320px) {
+      flex-wrap: nowrap;
+    }
+
+    @include media($medium) {
+      order: 2;
+      flex: auto 0 0;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  .cta__header {
+    order: 2;
+
+    @include media($medium) {
+      order: 3;
+    }
+  }
+  .social-network--list__header {
+    order: 4;
+  }
+}

@@ -67,9 +67,7 @@
     border-radius: 50%;
     max-width: 85px;
     max-height: 85px;
-    @include media($medium) {
-      position: absolute;
-    }
+    margin-right: 2.5rem;
   }
   .categories-list {
     color: $primary-accent;
@@ -104,11 +102,6 @@
       justify-content: space-between;
     }
   }
-  .entry-details-profile-image {
-    @include media($medium) {
-      position: static;
-    }
-  }
   .entry-details {
     display: flex;
     margin: 2rem 0;
@@ -140,6 +133,10 @@
   }
   .entry-details-author-name {
     margin: 2rem;
+  }
+  .entry-details-author-name {
+    color: $secondary-dark;
+    font-weight: 700;
   }
 }
 

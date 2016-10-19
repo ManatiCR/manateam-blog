@@ -30,3 +30,29 @@
     opacity: 0;
     padding: 0 10px;
 }
+
+.page-main {
+  main {
+    padding: 0 15px;
+    @include media($small) {
+      padding: 0 7%;
+    }
+    @include media($full-width) {
+      padding: 0 90px;
+    }
+  }
+  .content-section-header {
+    border-bottom: solid 2px $primary-accent;
+    border-radius: 0 0 0 4px;
+    margin: 3rem 0;
+  }
+  .section-title,
+  .content-section-title {
+    background: $primary-accent;
+    border-radius: 3px 3px 0;
+    display: inline-block;
+    @include font-size(2.5);
+    margin: 0;
+    padding: 15px 20px 10px;
+  }
+}

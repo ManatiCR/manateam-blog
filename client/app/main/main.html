@@ -20,27 +20,36 @@
 
       <!-- blog item -->
       <article class="entry entry-teaser" ng-repeat="post in posts" >
-        <div class="entry-container  entry-teaser-container">
-          <h2 class="title entry-title-teaser">
-            <a ui-sref="blogPost({id: post.nid, lang: language})">{{post.title}}</a>
-          </h2>
-          <p class="entry-content entry-teaser-content" ng-bind-html="post.body"></p>
-          <a ui-sref="blogPost({id: post.nid, lang: language})" class="button button-with-arrow read-more">{{'READ-MORE-LINK' | translate }}</a>
+        <div class="entry-detail-top">
+          <figure class="entry-media-image">
+            <img class="entry-lead-image" ng-src="{{post.image}}" alt="">
+          </figure>
         </div>
-        <aside class="entry-details">
-          <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
-          <h3 class="entry-details-author-name">
-            {{post.authorName}}
-          </h3>
-          <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
-          <div class="categories-list">{{post.tags}}</div>
-        <!--  <ul class="categories-list">
-            <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
-          </ul> -->
-        </aside>
+        <div class="entry-details-content">
+          <div class="entry-details-info">
+            <h3 class="entry-details-author-name">
+              {{post.authorName}}
+            </h3>
+            <div class="categories-list">{{post.tags}}</div>
+            <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
+          </div>
+          <div class="entry-container entry-teaser-container">
+            <h2 class="title entry-title-teaser">
+              <a ui-sref="blogPost({id: post.nid, lang: language})">{{post.title}}</a>
+            </h2>
+            <p class="entry-content entry-teaser-content" ng-bind-html="post.body"></p>
+            <a ui-sref="blogPost({id: post.nid, lang: language})" class="button button-with-arrow read-more">{{'READ-MORE-LINK' | translate }}</a>
+          </div>
+          <aside class="entry-details">
+            <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
+          <!--  <ul class="categories-list">
+              <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
+            </ul> -->
+          </aside>
+        </div>
       </article> <!-- end blog item -->
     </div> <!-- entry-list -->
     <ul class="pager" ng-cloak ng-if="pageCount > 1" ng-show="loadingFinished">

@@ -102,8 +102,11 @@
       justify-content: space-between;
     }
   }
-  .entry-details {
+  .entry-author-profile {
     display: flex;
+  }
+  .entry-details {
+    display: block;
     margin: 2rem 0;
     order: 0;
     width: 100%;
@@ -138,6 +141,22 @@
     color: $secondary-dark;
     font-weight: 700;
   }
+  .entry-author-position {
+    color: $secondary-light;
+    display: block;
+    @include font-size(1.3);
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .entry-details-profile-image {
+    margin: 0;
+  }
+  .entry-about-author {
+    margin: 2rem 0;
+  }
+  .entry-author-block {
+    border-bottom: solid 1px $secondary-light;
+  }
 }
 
 //Blog pager.
@@ -155,16 +174,16 @@
     margin-right: 10px;
     text-transform: uppercase;
   }
+  a,
+  .actual {
+    display: inline-block;
+    line-height: 15px;
+    padding: 5px 10px;
+  }
+  a:hover,
   .actual {
     background: $primary-accent;
     border-radius: 4px;
-    padding: 5px 10px;
-  }
-  a {
-    padding: 5px 10px;
-    &:hover {
-      background: $primary-accent;
-      border-radius: 4px;
-    }
+    color: $white;
   }
 }

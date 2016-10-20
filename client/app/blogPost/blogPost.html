@@ -26,7 +26,7 @@
             </figure>
             <div class="entry-details-info">
               <div class="categories-list"> {{post.tags}}</div>
-              <time class="entry-details-date" datetime="2014-12-16">{{post.created}}</time>
+              <time class="entry-details-date" datetime="2014-12-16">/ {{post.created}}</time>
             </div>
           </div>
           <header class="entry-full-content-header">
@@ -51,16 +51,24 @@
         </div>
 
         <aside class="entry-details">
-          <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
-          <h3 class="entry-details-author-name">
-            {{post.authorName}}
-          </h3>
-          <!-- <ul class="categories-list">
-            <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
-            <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
-          </ul> -->
+          <div class="entry-author-block">
+            <div class="entry-author-profile">
+              <img class="entry-details-profile-image" ng-src="{{post.authorPicture}}">
+              <h3 class="entry-details-author-name">
+                {{post.authorName}}
+                <span class="entry-author-position">{{post.authorPosition}}</span>
+              </h3>
+            </div>
+            <div class="entry-about-author">
+              {{post.authorAboutMe}}
+            </div>
+            <!-- <ul class="categories-list">
+              <li class="categories-item"><a href="#" class="categories-item-link">Drupal</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">Views</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">Databases</a></li>
+              <li class="categories-item"><a href="#" class="categories-item-link">RESTful Services</a></li>
+            </ul> -->
+          </div>
         </aside>
 
       </article> <!-- end blog item -->

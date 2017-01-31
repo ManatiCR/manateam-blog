@@ -17,9 +17,10 @@ angular.module('manatiBlogApp', [
     url: 'http://test-manatiblog.pantheonsite.io/api/'
   }
 })
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider,$translateProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider, $disqusProvider) {
   $urlRouterProvider
   .otherwise('/not-found');
+  $disqusProvider.setShortname('kporras07');
   $locationProvider.html5Mode(true);
   $translateProvider.translations('en',{
     'MANATI-SLOGAN': 'A bunch of Drupal geeks from Costa Rica',

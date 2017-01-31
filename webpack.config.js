@@ -32,7 +32,20 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? {} : {
-    app: './client/app/app.js'
+    app: './client/app/app.js',
+    vendor: [
+      './client/bower_components/angular',
+      './client/bower_components/angular-animate',
+      './client/bower_components/angular-cookies',
+      './client/bower_components/angular-disqus/angular-disqus.js',
+      './client/bower_components/angular-resource',
+      './client/bower_components/angular-sanitize',
+      './client/bower_components/angular-translate/angular-translate.js',
+      './client/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
+      './client/bower_components/angular-ui-router/release/angular-ui-router.js',
+      './client/bower_components/jquery/dist/jquery.js',
+      './client/bower_components/lodash/dist/lodash.compat.js'
+    ]
   };
 
   /**
@@ -173,7 +186,8 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ];
 
   // Skip rendering index.html in test mode

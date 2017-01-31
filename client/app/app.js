@@ -1,6 +1,7 @@
 'use strict';
 
-import './app.scss'
+// Sass.
+require('./app.scss');
 
 angular.module('manatiBlogApp', [
   'ngCookies',
@@ -58,3 +59,14 @@ angular.module('manatiBlogApp', [
   $translateProvider.useSanitizeValueStrategy('escape');
 
 });
+
+// Custom JS
+require('./blogPost/blogPost.js');
+require('./blogPost/blogPost.controller.js');
+require('./main/main.js');
+require('./main/main.controller.js');
+require('./not-found/not-found.js');
+require('./not-found/not-found.controller.js');
+require('../components/dataFactory/dataFactory.service.js');
+require('../components/navbar/navbar.controller.js');
+require('../components/postRelatedContent/postRelatedContent.controller.js');

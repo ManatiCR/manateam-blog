@@ -2,16 +2,12 @@
 
 ## Create local environment:
 
-In order to run this on your computer for development purposes:
-- Make sure you have node installed in your machine with nvm (https://github.com/creationix/nvm).
-
-- Use node version 0.12: `nvm install 0.12`.
+In order to run this on your computer you will need node >= 4
 
 - Run: `npm install && bower install`.
 
-- And finally: `grunt serve`.
+- And finally: `npm start` to create the local development server or `npm run build` to pack stuff to deploy to prod.
 
 ## Backend
 
 It's actually running at http://test-manatiblog.pantheonsite.io/api/ Ask for access if needed.
->>>>>>> e56cee317aa45e4248f02203947224b69cef81cd

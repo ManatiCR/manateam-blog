@@ -15,27 +15,4 @@ angular.module('manatiBlogApp')
     $translate.use(lang);
   };
 
-  $scope.menu = [
-    {
-      'title': 'About us',
-      'link': '/#about'
-    },
-    {
-      'title': 'Our Work',
-      'link': '/#work'
-    },
-    {
-      'title': 'Community',
-      'link': '/#community'
-    },
-    {
-      'title': 'Blog',
-      'link': '/blog'
-    },
-    {
-      'title': 'Contact us',
-      'link': '/#contact'
-    },
-  ];
-
 });

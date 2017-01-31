@@ -11,13 +11,13 @@
 
 .header-punchline--text {
   display: inline;
-  border-radius: 3px;
   background: #F59721;
   font-size: 3rem;
   color: $secondary-dark;
   font-family: $bariol;
   font-weight: bold;
   padding: 10px;
+  text-transform: uppercase;
   @include media($medium) {
     box-shadow: 10px 0 0 $secondary-accent, -10px 0 0 $secondary-accent;
   }

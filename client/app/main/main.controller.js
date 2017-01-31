@@ -23,7 +23,7 @@ angular.module('manatiBlogApp')
     dataFactory.getPosts(langCode, pageNumber).then(function(data) {
       $scope.posts = data;
       if (!$scope.posts.length) {
-        $state.go('not-found');
+        $state.go('main', {page: 1});
       }
     })
     .finally(function() {

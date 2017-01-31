@@ -15,23 +15,8 @@
     <link rel="canonical" href="http://www.estudiomanati.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(client) app/vendor.css -->
-      <!-- bower:css -->
-      <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="app/app.css">
-      <!-- injector:css -->
-      <!-- endinjector -->
-    <!-- endbuild -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
-  <![endif]-->
   </head>
   <body ng-app="manatiBlogApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
@@ -81,40 +66,5 @@
       ga('create', 'UA-XXXXX-X');
       ga('send', 'pageview');
     </script>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-    <!-- build:js({client,node_modules}) app/vendor.js -->
-      <!-- bower:js -->
-      <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="bower_components/angular-translate/angular-translate.js"></script>
-      <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-      <script src="bower_components/angular-disqus/angular-disqus.js"></script>
-      <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,client}) app/app.js -->
-        <script src="app/app.js"></script>
-          <!-- injector:js -->
-          <script src="app/blogPost/blogPost.controller.js"></script>
-          <script src="app/blogPost/blogPost.js"></script>
-          <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
-          <script src="app/not-found/not-found.controller.js"></script>
-          <script src="app/not-found/not-found.js"></script>
-          <script src="components/dataFactory/dataFactory.service.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
-          <script src="components/postRelatedContent/postRelatedContent.controller.js"></script>
-          <!-- endinjector -->
-        <!-- endbuild -->
 </body>
 </html>

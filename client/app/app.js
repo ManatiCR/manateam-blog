@@ -1,5 +1,7 @@
 'use strict';
 
+import './app.scss'
+
 angular.module('manatiBlogApp', [
   'ngCookies',
   'ngResource',

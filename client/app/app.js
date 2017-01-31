@@ -14,7 +14,7 @@ angular.module('manatiBlogApp', [
 ])
 .constant('appConfig',{
   api: {
-    url: 'http://test-manatiblog.pantheonsite.io/api/'
+    url: 'http://live-manatiblog.pantheonsite.io/api/'
   }
 })
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider, $disqusProvider) {

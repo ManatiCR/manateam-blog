@@ -16,7 +16,7 @@ angular.module('manatiBlogApp')
           var newLang = lang === 'es' ? 'en' : 'es';
           $scope.flashMessage = $translate.instant('POST-NOT-FOUND-LANG');
           $rootScope.destLang = newLang;
-          $translate.use(newLang);
+          $translate.use(lang);
           getPostById(id, newLang);
         }
      }).catch (function(e) {
